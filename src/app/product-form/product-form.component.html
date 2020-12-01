@@ -1,0 +1,46 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="artNo">Art-Nr</label>
+    <input type="text" name="artNo" class="form-control" id="artNo" placeholder="Art-Nr" formControlName="artNo">
+    <div *ngIf="form.controls.artNo.touched && ! form.controls.artNo.valid" class="invalid-feedback">
+      Bitte geben Sie eine Art-Nr an!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Bezeichnung</label>
+    <input type="text"  class="form-control" id="name" placeholder="Bezeichnung" formControlName="name">
+    <div *ngIf="form.controls.name.touched && ! form.controls.name.valid" class="invalid-feedback">
+      Bitte geben Sie eine Bezeichnung
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="price">Preis</label>
+    <input type="text" class="form-control" id="price" placeholder="Preis" formControlName="price">
+    <div *ngIf="form.controls.price.touched && ! form.controls.price.valid" class="invalid-feedback">
+      Bitte geben Sie einen Preis
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="category">Kategorie</label>
+    <select class="form-control" id="category" formControlName="category">
+      <option>Drucker</option>
+      <option>Tastaturen</option>
+      <option>Mäuse</option>
+    </select>
+    <div *ngIf="form.controls.category.touched && ! form.controls.category.valid" class="invalid-feedback">
+      Bitte geben Sie eine Kategorie
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Beschreibung</label>
+    <textarea name="description" class="form-control" id="description"  formControlName="description"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>

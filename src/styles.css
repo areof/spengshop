@@ -10,5 +10,8 @@ html, body {
   background-color: white;
   height: 100%;
   min-height: 100%;
+}
 
+.invalid-feedback {
+  display: block;
 }
