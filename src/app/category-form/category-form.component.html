@@ -1,0 +1,29 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="tax">Mehrwertsteuer</label>
+    <input type="number" name="tax" class="form-control" id="tax" placeholder="Mehrwertsteuer" formControlName="tax">
+    <div *ngIf="form.controls.tax.touched && ! form.controls.tax.valid" class="invalid-feedback">
+      Bitte geben Sie eine Mehrwertsteuer an!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="id">ID</label>
+    <input type="text"  class="form-control" id="id" placeholder="ID" formControlName="id">
+    <div *ngIf="form.controls.id.touched && ! form.controls.id.valid" class="invalid-feedback">
+      Bitte geben Sie eine ID an!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Name" formControlName="name">
+    <div *ngIf="form.controls.name.touched && ! form.controls.name.valid" class="invalid-feedback">
+      Bitte geben Sie einen Namen an!
+    </div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>

@@ -9,21 +9,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Products</a>
+          <a class="nav-link" routerLink="product-listing">Produkte</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">New-Product</a>
+          <a class="nav-link"  routerLink="product-new">Produkt-Neu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="category-listing">Kategorien</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="category-new">Neue Kategorie</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <!--
-  <app-product-form></app-product-form>
-  -->
+  <router-outlet></router-outlet>
 
 </div>
 
