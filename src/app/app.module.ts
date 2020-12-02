@@ -11,6 +11,8 @@ import { ProductListingComponent } from './product-listing/product-listing.compo
 import { CategoryNewComponent } from './category-new/category-new.component';
 import { CategoryListingComponent } from './category-listing/category-listing.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {HttpClientModule} from '@angular/common/http';
+import { CategoryEditComponent } from './category-edit/category-edit.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ProductListingComponent,
     CategoryNewComponent,
     CategoryListingComponent,
-    DashboardComponent
+    DashboardComponent,
+    CategoryEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
