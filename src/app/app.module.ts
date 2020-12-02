@@ -13,6 +13,7 @@ import { CategoryListingComponent } from './category-listing/category-listing.co
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CategoryEditComponent } from './category-edit/category-edit.component';
+import {NgxCurrencyModule} from "ngx-currency";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CategoryEditComponent } from './category-edit/category-edit.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxCurrencyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
