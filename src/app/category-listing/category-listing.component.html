@@ -1,1 +1,14 @@
-<p>category-listing works!</p>
+<h1>Kategorien</h1>
+
+<table class="table">
+  <tr>
+    <th scope="col">Bezeichnung</th>
+    <th scope="col">MwSt.</th>
+    <th scope="col">Aktionen</th>
+  </tr>
+  <tr *ngFor="let category of categories">
+    <td>{{category.name}}</td>
+    <td>{{category.tax}} %</td>
+    <td><button class="btn btn-primary">Edit</button></td>
+  </tr>
+</table>
