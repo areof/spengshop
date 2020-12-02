@@ -19,7 +19,8 @@ export class CategoryNewComponent implements OnInit {
   }
 
   submitForm(category: Category): void {
-    this.categoryService.add(category);
-    this.router.navigate(['category-listing']);
+    this.categoryService.save(category).subscribe(() => {
+      this.router.navigate(['category-listing']);
+    });
   }
 }

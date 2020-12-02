@@ -8,17 +8,23 @@ import {Observable} from "rxjs";
 })
 export class CategoryService {
 
-  private categories: Category[] = [];
-
   constructor(
     private httpClient: HttpClient
   ) { }
 
-  public add(category: Category): void {
-    this.categories.push(category);
-  }
-
   public getAll(): Observable<Category[]> {
     return this.httpClient.get<Category[]>('http://localhost:3000/categories');
+  }
+
+  public get(id: number): Observable<Category> {
+    return this.httpClient.get<Category>(`http://localhost:3000/categories/${id}`);
+  }
+
+  public save(category: Category): Observable<Category> {
+    if (category.id) {
+      return this.httpClient.put<Category>(`http://localhost:3000/categories/${category.id}`, category);
+    } else {
+      return this.httpClient.post<Category>(`http://localhost:3000/categories`, category);
+    }
   }
 }
