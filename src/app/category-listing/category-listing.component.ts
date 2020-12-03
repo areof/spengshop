@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {CategoryService} from '../services/category.service';
 import {Category} from '../model/category';
 import {ProductService} from '../services/product.service';
-import {iif, of, Subject} from 'rxjs';
-import {switchMap} from 'rxjs/operators';
+import {iif, Observable, of, Subject} from 'rxjs';
+import {catchError, map, switchMap, tap} from 'rxjs/operators';
 import {MessageService} from "../services/message.service";
 
 @Component({
@@ -24,7 +24,16 @@ export class CategoryListingComponent implements OnInit {
   }
 
   private loadCategories(): void {
-    this.categoryService.getAll().subscribe((categories: Category[]) => {
+    // selector: (err: any, caught: Observable<T>) => O
+    this.categoryService.getAll().pipe(
+      catchError(error => {
+        this.messageService.pushMessage({
+          isError: true,
+          message: 'Es trat ein Fehler bei der HTTP-Kommunikation auf.'
+        });
+        return of<Category[]>([]);
+      })
+    ).subscribe((categories: Category[]) => {
       this.categories = categories;
     });
   }
