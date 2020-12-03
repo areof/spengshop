@@ -1,5 +1,9 @@
 <h1>Produkte</h1>
 
+<div>
+  Produkt-Filter:
+  <input class="form-control" type="text" value="" [(ngModel)]="filter">
+</div>
 <table class="table">
   <tr>
     <th scope="col">ArtNr.</th>
@@ -8,8 +12,8 @@
     <th scope="col">Kategorie</th>
     <th scope="col">Aktion</th>
   </tr>
-  <tr *ngFor="let product of products">
-    <td>{{product.artNo}}</td>
+  <tr *ngFor="let product of products | productFilter:filter">
+    <td>{{product.artNo | artNo}}</td>
     <td>{{product.name}}</td>
     <td align="right">{{product.price | currency:'€ ' }}</td>
     <td>{{product.category}}</td>
