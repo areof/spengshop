@@ -42,7 +42,10 @@ registerLocaleData(localeDe, 'de-DE', localeDeExtra);
     HttpClientModule,
     NgxCurrencyModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'de-DE'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

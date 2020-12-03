@@ -18,7 +18,7 @@
 
   <div class="form-group">
     <label for="price">Preis</label>
-    <input type="text" currencyMask [options]="{prefix: '€ ', decimal: ','}" class="form-control" id="price" placeholder="Preis" formControlName="price">
+    <input type="text" currencyMask [options]="{prefix: '€ '}" class="form-control" id="price" placeholder="Preis" formControlName="price">
     <div *ngIf="form.controls.price.touched && ! form.controls.price.valid" class="invalid-feedback">
       Bitte geben Sie einen Preis
     </div>

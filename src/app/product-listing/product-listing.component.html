@@ -2,14 +2,16 @@
 
 <table class="table">
   <tr>
+    <th scope="col">ArtNr.</th>
     <th scope="col">Bezeichnung</th>
-    <th scope="col">MwSt.</th>
-    <th scope="col">Aktionen</th>
+    <th scope="col" align="right" style="text-align: right">Preis</th>
+    <th scope="col">Kategorie</th>
+    <th scope="col">Aktion</th>
   </tr>
   <tr *ngFor="let product of products">
     <td>{{product.artNo}}</td>
     <td>{{product.name}}</td>
-    <td>{{product.price}}</td>
+    <td align="right">{{product.price | currency:'€ ' }}</td>
     <td>{{product.category}}</td>
     <td><button class="btn btn-primary" [routerLink]="['/product-edit', product.id]">Edit</button></td>
   </tr>
