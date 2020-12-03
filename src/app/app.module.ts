@@ -23,6 +23,7 @@ import { ArtNoPipe } from './art-no.pipe';
 import { ProductFilterPipe } from './product-filter.pipe';
 import { MessageComponent } from './message/message.component';
 import {LoginComponent} from "./login/login.component";
+import { AdminComponent } from './admin/admin.component';
 registerLocaleData(localeDe, 'de-DE', localeDeExtra);
 
 @NgModule({
@@ -40,7 +41,8 @@ registerLocaleData(localeDe, 'de-DE', localeDeExtra);
     ArtNoPipe,
     ProductFilterPipe,
     MessageComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
