@@ -1,1 +1,7 @@
-<p>login works!</p>
+<form>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" #pw>
+  </div>
+  <button type="button" (click)="login(pw.value)" class="btn btn-primary">Submit</button>
+</form>
