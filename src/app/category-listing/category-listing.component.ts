@@ -4,6 +4,7 @@ import {Category} from '../model/category';
 import {ProductService} from '../services/product.service';
 import {iif, of, Subject} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
+import {MessageService} from "../services/message.service";
 
 @Component({
   selector: 'app-category-listing',
@@ -16,7 +17,8 @@ export class CategoryListingComponent implements OnInit {
 
   constructor(
     private categoryService: CategoryService,
-    private productService: ProductService
+    private productService: ProductService,
+    private messageService: MessageService
   ) {
     this.loadCategories();
   }
@@ -37,7 +39,10 @@ export class CategoryListingComponent implements OnInit {
           this.loadCategories();
         });
       } else {
-        window.alert('Diese Kategorie kann nicht gelöscht werden.');
+        this.messageService.pushMessage({
+          isError: true,
+          message: 'Kategorie kann nicht gelöscht werden, da sie Produkte enthält.'
+        });
       }
     });
   }
