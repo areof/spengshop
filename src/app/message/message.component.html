@@ -1,0 +1,6 @@
+<div [hidden]="isHidden" class="alert" [ngClass]="isError ? 'alert-danger' : 'alert-success'" role="alert">
+  <button type="button" class="close" aria-label="Close" (click)="isHidden = true">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  {{message}}
+</div>
