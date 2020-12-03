@@ -18,6 +18,10 @@ export class CategoryListingComponent implements OnInit {
     private categoryService: CategoryService,
     private productService: ProductService
   ) {
+    this.loadCategories();
+  }
+
+  private loadCategories(): void {
     this.categoryService.getAll().subscribe((categories: Category[]) => {
       this.categories = categories;
     });
@@ -27,6 +31,14 @@ export class CategoryListingComponent implements OnInit {
   }
 
   deleteCategory(id: number): void {
-
+    this.productService.getAll().subscribe(products => {
+      if (products.find(product => product.category === id) === undefined) {
+        this.categoryService.delete(id).subscribe(() => {
+          this.loadCategories();
+        });
+      } else {
+        window.alert('Diese Kategorie kann nicht gelöscht werden.');
+      }
+    });
   }
 }

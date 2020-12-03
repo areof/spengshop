@@ -28,7 +28,7 @@ export class CategoryService {
     }
   }
 
-  public delete(categoryId: number): Observable<boolean>{
-    return of(true);
+  public delete(categoryId: number): Observable<any>{
+    return this.httpClient.delete<any>(`http://localhost:3000/categories/${categoryId}`);
   }
 }
