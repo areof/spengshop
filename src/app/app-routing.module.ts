@@ -6,6 +6,7 @@ import {CategoryListingComponent} from './category-listing/category-listing.comp
 import {CategoryNewComponent} from './category-new/category-new.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {CategoryEditComponent} from './category-edit/category-edit.component';
+import {ProductEditComponent} from './product-edit/product-edit.component';
 
 const routes: Routes = [{
   path: '',
@@ -16,6 +17,9 @@ const routes: Routes = [{
 }, {
   path: 'product-new',
   component: ProductNewComponent
+}, {
+  path: 'product-edit/:id',
+  component: ProductEditComponent
 }, {
   path: 'category-listing',
   component: CategoryListingComponent

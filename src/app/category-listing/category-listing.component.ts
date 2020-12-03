@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {CategoryService} from "../services/category.service";
-import {Category} from "../model/category";
+import {CategoryService} from '../services/category.service';
+import {Category} from '../model/category';
+import {ProductService} from '../services/product.service';
+import {iif, of, Subject} from 'rxjs';
+import {switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-category-listing',
@@ -12,7 +15,8 @@ export class CategoryListingComponent implements OnInit {
   categories: Category[] = [];
 
   constructor(
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private productService: ProductService
   ) {
     this.categoryService.getAll().subscribe((categories: Category[]) => {
       this.categories = categories;
@@ -22,4 +26,7 @@ export class CategoryListingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteCategory(id: number): void {
+
+  }
 }

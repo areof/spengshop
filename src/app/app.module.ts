@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +13,13 @@ import { CategoryListingComponent } from './category-listing/category-listing.co
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CategoryEditComponent } from './category-edit/category-edit.component';
-import {NgxCurrencyModule} from "ngx-currency";
+import {NgxCurrencyModule} from 'ngx-currency';
+import { ProductEditComponent } from './product-edit/product-edit.component';
+import {registerLocaleData} from '@angular/common';
+
+import localeDe from '@angular/common/locales/de';
+import localeDeExtra from '@angular/common/locales/extra/de';
+registerLocaleData(localeDe, 'de-DE', localeDeExtra);
 
 @NgModule({
   declarations: [
@@ -25,7 +31,8 @@ import {NgxCurrencyModule} from "ngx-currency";
     CategoryNewComponent,
     CategoryListingComponent,
     DashboardComponent,
-    CategoryEditComponent
+    CategoryEditComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,
