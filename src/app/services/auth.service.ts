@@ -5,21 +5,26 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  constructor() { }
+  storage: Storage;
+
+  constructor() {
+    this.storage = sessionStorage;
+  }
 
   login(pw: string): boolean {
     if (pw === 'geheim') {
-      sessionStorage.setItem('loggedIn', 'true');
+      this.storage.setItem('loggedIn', 'true');
+
       return true;
     }
     return false;
   }
 
   logout(): void {
-     sessionStorage.removeItem('loggedIn');
+    this.storage.removeItem('loggedIn');
   }
 
   isAuthenticated(): boolean {
-    return sessionStorage.getItem('loggedIn') === 'true';
+    return this.storage.getItem('loggedIn') === 'true';
   }
 }

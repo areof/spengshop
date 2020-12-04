@@ -20,7 +20,7 @@ export class ProductNewComponent implements OnInit {
 
   saveForm(product: Product): void {
     this.productService.save(product).subscribe(() => {
-      this.router.navigate(['product-listing']);
+      this.router.navigate(['admin', 'product-listing']);
     });
   }
 }

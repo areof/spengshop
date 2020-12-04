@@ -17,6 +17,6 @@
     <td>{{product.name}}</td>
     <td align="right">{{product.price | currency:'€ ' }}</td>
     <td>{{product.category}}</td>
-    <td><button class="btn btn-primary" [routerLink]="['/product-edit', product.id]">Edit</button></td>
+    <td><button class="btn btn-primary" [routerLink]="['/admin', 'product-edit', product.id]">Edit</button></td>
   </tr>
 </table>

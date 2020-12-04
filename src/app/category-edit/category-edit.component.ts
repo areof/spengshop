@@ -29,7 +29,7 @@ export class CategoryEditComponent implements OnInit {
 
   saveForm(category: Category): void {
     this.categoryService.save({ ...this.category, ...category }).subscribe(obj => {
-      this.router.navigate(['category-listing']);
+      this.router.navigate(['admin', 'category-listing']);
     });
   }
 }

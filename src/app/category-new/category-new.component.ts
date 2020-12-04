@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Category} from '../model/category';
 import {CategoryService} from '../services/category.service';
 import {Router} from '@angular/router';
-import {MessageService} from "../services/message.service";
+import {MessageService} from '../services/message.service';
 
 @Component({
   selector: 'app-category-new',
@@ -26,7 +26,7 @@ export class CategoryNewComponent implements OnInit {
         isError: false,
         message: 'Die Kategorie wurde angelegt'
       });
-      this.router.navigate(['category-listing']);
+      this.router.navigate(['admin', 'category-listing']);
     });
   }
 }
